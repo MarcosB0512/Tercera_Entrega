@@ -1,0 +1,26 @@
+{% extends 'AppCoder/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+    PROFESORES
+{% endblock titulo %}
+
+{% block header %}    
+    <div class="masthead-subheading"><br> Bienvenidos a Profesores !</div>
+    <a href="{% url 'Create_Profe' %}">Nuevo Profesor</a>
+{% endblock header %}
+
+{% block body %}
+    <ul class="container"><br>
+        {% for profesor in object_list %}
+            <li>
+                <p> {{profesor.nombre}} <br><br> 
+                    <a href="{% url 'Detail_Profe' profesor.id %}">Ver</a>
+                    <a href="{% url 'Update_Profe' profesor.id %}">Editar</a>
+                    <a href="{% url 'Delete_Profe' profesor.id %}">Borrar</a>
+                </p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock body %}

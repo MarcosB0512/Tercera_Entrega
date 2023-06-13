@@ -1,0 +1,27 @@
+{% extends 'AppCoder/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+    Profesor Edicion
+{% endblock titulo %}
+
+{% block header %}    
+    <div class="masthead-subheading"><br>  Editar Profesor !</div>
+    <br>
+{% endblock header %}
+
+{% block body %}
+    <br>
+    <form class="container" method="POST">
+        {% csrf_token %}
+        <p>Nombre:&nbsp&nbsp&nbsp <input type="text" name="nombre" value="{{ profesor.nombre }}"></p>
+        <p>Apellido:&nbsp&nbsp <input type="text" name="apellido" value="{{ profesor.apellido }}"></p>
+        <p>Email:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="email" name="email" value="{{ profesor.email }}"></p>
+        <p>Profesion: <input type="text" name="profesion" value="{{ profesor.profesion }}"></p>
+
+        <input type="submit" value="Guardar">
+        <br>
+        <a href="{% url 'List_Profe' %}">Regresar sin Guardar..</a>
+    </form>
+{% endblock body %}

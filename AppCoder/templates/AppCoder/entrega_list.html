@@ -1,0 +1,34 @@
+{% extends 'AppCoder/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+    CURSOS
+{% endblock titulo %}
+
+{% block header %}    
+    <div class="masthead-subheading"><br> Lista de Entregables ! </div>
+    <br>
+{% endblock header %}
+
+{% block body %}
+    <ul class="container"><br>
+        {% for entregable in object_list %}
+            <li>
+                <p> 
+                    {% if entregable.entregado %} 
+                        <strong>Entregado</strong>
+                    {% else %} 
+                        <span style="color: red;">No Entregado</span>
+                    {% endif %}
+                    - {{ entregable.nombre }}
+                </p>
+                <p> {{entregable.fecha_de_Entrega}} <br><br>
+                    <!-- <a href="{% url 'Detail' entregable.id %}">Ver</a> -->
+                    <a href="{% url 'Update_Entrega' entregable.id %}">Editar</a>
+                    <a href="{% url 'Delete_Entrega' entregable.id %}">Borrar</a>
+                </p><br>
+            </li>
+        {% endfor %}
+    </ul>   
+{% endblock body %}

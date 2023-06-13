@@ -1,0 +1,24 @@
+{% extends 'AppCoder/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+    Estudiante Edicion
+{% endblock titulo %}
+
+{% block header %}    
+    <div class="masthead-subheading"><br>  Editar Estudiante !</div>
+    <br>
+{% endblock header %}
+
+{% block body %}
+    <br>
+    <form class="container" method="POST">
+        {% csrf_token %}
+        <p>Nombre:&nbsp&nbsp&nbsp <input type="text" name="nombre" value="{{ estudiante.nombre }}"></p>
+        <p>Apellido:&nbsp&nbsp <input type="text" name="apellido" value="{{ estudiante.apellido }}"></p>
+        <p>Email:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="email" name="email" value="{{ estudiante.email }}"></p>
+        <input type="submit" value="Guardar"><br>
+        <a href="{% url 'List_Est' %}">Regresar sin Guardar..</a>
+    </form>
+{% endblock body %}

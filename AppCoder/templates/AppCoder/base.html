@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>{% block titulo %}{% endblock titulo %}</title>
+        <link rel="icon" type="image/x-icon" href='{% static "AppCoder/assets/favicon.ico" %}' />
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <link href='{% static "AppCoder/css/styles.css" %}' rel="stylesheet" />
+    </head>
+
+    <header > 
+        <div class="container">        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-lT97kAP5RiEOrr8exATUXNKuzxncUjPjgRmx5vB9c8xt5jldKOWDXHxkWhCKut91Edc0u25WyFzIzAKbU8n9Iw==" crossorigin="anonymous" />
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <h1 class="nombre">Inicio</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Inicio
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav navbar-brand navbar-nav-scroll text-uppercase ms-auto py-4 py-lg-0">
+                    <!-- <li class="nav-item"><a class="nav-link" href="inicio">Inicio</a></li> -->
+                    <li class="nav-item"><a class="nav-link" href="/cursos">Cursos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/profesores">Profesores</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/estudiantes">Estudiantes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/entregables">Entregables</a></li>
+                    <li class="nav-item">
+                        <a class="bi-person-fill" href="/admin">Login</a>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 20px 20px">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="masthead">
+        <div class="container">
+            {% block header %}
+                <div class="masthead-subheading"><br> Bienvenidos a Coder! </div>
+                <br>
+            {% endblock header %}
+            
+        </div>
+    </header>
+
+    {% block body %}
+    {% endblock body %}
+    
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2023</div>
+                <div class="col-lg-4 my-3 my-lg-0"></div>
+                <div class="col-lg-4 text-lg-end">
+                    <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                    <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src='{% static "AppCoder/js/scripts.js" %}'></script>
+
+</html>

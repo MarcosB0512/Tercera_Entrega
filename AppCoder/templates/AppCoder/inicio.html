@@ -1,0 +1,30 @@
+{% extends 'AppCoder/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+    Inicio
+{% endblock titulo %}
+
+{% block body %}
+
+<br>
+<h2>Podes Buscar una Camada</h2>
+<form class="container" action="/AppCoder/buscar/" method="GET" >
+    
+    <input type="text" name="camada" id="camada">
+    <input type="submit" value="Buscar">
+</form>
+
+<br>
+
+{% if cursos %}
+<ul class="container">
+    {% for curso in cursos %}
+        <li><p>Nombre: {{curso.nombre}} <br> <p>Camada: <strong>{{curso.camada}}</strong> <p>Fecha de Creacion: {{curso.fecha_create}}</p> </p></p></li>
+        
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% endblock body %}

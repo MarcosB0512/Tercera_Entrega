@@ -1,0 +1,26 @@
+{% extends 'AppCoder/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+    CURSOS
+{% endblock titulo %}
+
+{% block header %}    
+    <div class="masthead-subheading"><br> Bienvenidos a los Cursos en Coder ! </div>
+    <a href="{% url 'Create' %}">Crear Curso</a>
+{% endblock header %}
+
+{% block body %}
+    <ul class="container"><br>
+        {% for curso in object_list %}
+            <li>
+                <p> {{curso.nombre}} <br><br> 
+                    <a href="{% url 'Detail' curso.id %}">Ver</a>
+                    <a href="{% url 'Update' curso.id %}">Editar</a>
+                    <a href="{% url 'Delete' curso.id %}">Borrar</a>
+                </p>
+            </li>
+        {% endfor %}
+    </ul>   
+{% endblock body %}

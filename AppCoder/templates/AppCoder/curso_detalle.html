@@ -1,0 +1,23 @@
+{% extends 'AppCoder/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+    Curso Detalle
+{% endblock titulo %}
+
+{% block header %}    
+    <div class="masthead-subheading"><br> Detalle del Curso !</div>
+{% endblock header %}
+
+{% block body %}
+    <br>
+    <div class="container">
+        <p>Nombre del Curso: <i> {{ curso.nombre }}  </p>
+        <p>Numero  Camada : <i> {{ curso.camada }}  </p>
+    </div>
+    <p class="container">
+        <a href="{% url 'List' %}">Regresar..</a>
+    </p>
+    <br>
+{% endblock body %}

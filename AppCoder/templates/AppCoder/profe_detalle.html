@@ -1,0 +1,26 @@
+{% extends 'AppCoder/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+Detalle de Profesor 
+{% endblock titulo %}
+
+{% block header %}    
+    <div class="masthead-subheading"><br> Detalle del Profesor !</div>
+    <br>
+{% endblock header %}
+
+{% block body %}
+    <br>
+    <div class="container">
+        <p>Nombre: <i> {{ profesor.nombre }}  </p>
+        <p>Apellido: <i> {{ profesor.apellido }}  </p>
+        <p>Email: <i> {{ profesor.email }}  </p>
+        <p>Profesion: <i> {{ profesor.profesion }}  </p>
+    </div>
+    <p class="container">
+        <a href="{% url 'List_Profe' %}">Regresar..</a>
+    </p>
+    <br>
+{% endblock body %}

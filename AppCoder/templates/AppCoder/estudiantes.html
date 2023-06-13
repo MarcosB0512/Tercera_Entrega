@@ -1,0 +1,30 @@
+{% extends 'AppCoder/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+    ESTUDIANTES
+{% endblock titulo %}
+
+{% block header %}    
+    <div class="masthead-subheading"><br> Bienvenidos a Estudiantes !</div>
+    <!-- <a href="{% url 'Create_Est' %}">Nuevo Estudiante</a> -->
+    <a href="{% url 'Create_Est' %}">
+        <input type="submit" value="Nuevo Estudiante"></input>
+    </a>
+
+{% endblock header %}
+
+{% block body %}
+<ul class="container"><br>
+    {% for estudiante in object_list %}
+        <li>
+            <p> {{estudiante.nombre}} - {{estudiante.apellido}} <br><br> 
+                <a href="{% url 'Detail_Est' estudiante.id %}">Ver</a>
+                <a href="{% url 'Update_Est' estudiante.id %}">Editar</a>
+                <a href="{% url 'Delete_Est' estudiante.id %}">Borrar</a>
+            </p>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock body %}

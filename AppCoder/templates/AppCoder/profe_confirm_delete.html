@@ -1,0 +1,27 @@
+{% extends 'AppCoder/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+    Profesor Eliminar
+{% endblock titulo %}
+
+{% block header %}    
+    <div class="masthead-subheading"><br> Dar de baja Profesor !</div>
+    <br>
+{% endblock header %}
+
+{% block body %}
+<br>
+<form class="container" method="POST">
+    {% csrf_token %}
+    ¿Estas seguro que queres dar de baja al profesor:<br><br> <strong>{{ object }}</strong>?
+    <br><br>
+    <p class="container">
+        <input type="submit" value="Eliminar">
+        <br><br>
+        <a href="{% url 'List_Profe' %}">Regresar..</a>
+    </p>
+</form>
+<br>
+{% endblock body %}

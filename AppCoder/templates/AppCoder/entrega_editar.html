@@ -1,0 +1,25 @@
+{% extends 'AppCoder/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+    Entrega Edicion
+{% endblock titulo %}
+
+{% block header %}    
+    <div class="masthead-subheading"><br>  Editar Entrega !</div>
+    <br>
+{% endblock header %}
+
+{% block body %}
+    <br>
+    <form class="container" method="POST">
+        {% csrf_token %}
+        <p>Nombre: <input type="text" name="nombre" value="{{ entregable.nombre }}"></p>
+        <p>Fecha_de_Entrega: <input type="date" name="fecha_de_Entrega" value="{{ entregable.fecha_de_Entrega }}"></p>
+        <p>Entregado: <input type="checkbox" name="entregado" value="1" {% if entregable.entregado %} checked {% endif %}></p>
+        <input type="submit" value="Guardar">
+        <br>
+        <a href="{% url 'List_Entrega' %}">Regresar sin Guardar..</a>
+    </form>
+{% endblock body %}
